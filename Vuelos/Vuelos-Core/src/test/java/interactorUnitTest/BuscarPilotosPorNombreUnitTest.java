@@ -21,7 +21,7 @@ import static modelo.TipoPiloto.factoryTipoPiloto;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class buscarPilotosPorNombreUnitTest {
+public class BuscarPilotosPorNombreUnitTest {
 
     @Mock
     IBuscarPilotosPorNombreRepo buscarPilotosPorNombreRepo;

@@ -16,7 +16,7 @@ import repositorio.ICrearPilotoRepo;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class crearPilotoUnitTest {
+public class CrearPilotoUnitTest {
 
     @Mock
     ICrearPilotoRepo crearPilotoRepo;
