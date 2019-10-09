@@ -28,7 +28,8 @@ public class CrearPilotoIT {
 
     @Test
     public void guardarPiloto_pilotoGuardado_devuelveTrue() throws PilotoIncompletoException, TipoPilotoIncompletoException {
-        Piloto elPiloto= Piloto.factoryPiloto(null,"Perez","Juan","12345678", TipoPiloto.factoryTipoPiloto(null, "Comandante"));
+        TipoPiloto elTipoPiloto=TipoPiloto.factoryTipoPiloto(1, "Comandante");
+        Piloto elPiloto= Piloto.factoryPiloto(null,"Perez","Juan","12345678", elTipoPiloto);
         boolean resultado= crearPilotoRepoImpl.guardar(elPiloto);
         assertTrue(resultado);
     }
