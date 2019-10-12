@@ -21,6 +21,12 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
     }
 
     @Override
+    public TipoPiloto findByIdTipoPiloto(Integer id){
+        TipoPilotoEntity elTipoPilotoEntity = crearTipoPilotoCRUD.findByIdTipoPiloto(id);
+        return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+    }
+
+    @Override
     public TipoPiloto findByDenominacion(String denominacion) {
         return null;
     }
