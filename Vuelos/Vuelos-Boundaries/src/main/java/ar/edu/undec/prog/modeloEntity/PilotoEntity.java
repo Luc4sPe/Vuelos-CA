@@ -19,7 +19,7 @@ public class PilotoEntity {
     private String dni;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private TipoPilotoEntity tipoPiloto;
 
     public PilotoEntity() {

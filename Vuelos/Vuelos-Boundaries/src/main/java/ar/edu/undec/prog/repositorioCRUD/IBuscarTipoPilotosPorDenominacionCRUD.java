@@ -11,4 +11,6 @@ public interface IBuscarTipoPilotosPorDenominacionCRUD extends CrudRepository<Ti
 
     List<TipoPilotoEntity> findByDenominacionContains(String denominacion);
 
+    TipoPilotoEntity findByDenominacion(String denominacion);
+
 }
