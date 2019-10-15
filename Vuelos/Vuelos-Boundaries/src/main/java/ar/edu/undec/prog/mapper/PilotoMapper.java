@@ -13,20 +13,15 @@ import org.springframework.stereotype.Repository;
 public class PilotoMapper {
 
 
-    public PilotoEntity mapeoCoreData(Piloto pilotoCore, IBuscarPilotosPorDNI buscarPilotosPorDNI, IBuscarTipoPilotosPorDenominacionCRUD buscarTipoPilotosPorDenominacionCRUD) {
-
-        if (pilotoCore.getIdPiloto()==null) {
+    public PilotoEntity mapeoCoreData(Piloto pilotoCore) {
             PilotoEntity pilotoEntity = new PilotoEntity();
+            pilotoEntity.setIdPiloto(pilotoCore.getIdPiloto());
             pilotoEntity.setNombre(pilotoCore.getNombre());
             pilotoEntity.setApellido(pilotoCore.getApellido());
             pilotoEntity.setDni(pilotoCore.getDni());
-            pilotoEntity.setTipoPiloto(new TipoPilotoMapper().mapeoCoreData(pilotoCore.getTipoPiloto(),buscarTipoPilotosPorDenominacionCRUD));
+            pilotoEntity.setTipoPiloto(new TipoPilotoMapper().mapeoCoreData(pilotoCore.getTipoPiloto()));
             return pilotoEntity;
-        }
-        else
-        {
-            return buscarPilotosPorDNI.findByDni(pilotoCore.getDNI());
-        }
+
     }
 
     public Piloto mapeoDataCore(PilotoEntity elPiloto) {

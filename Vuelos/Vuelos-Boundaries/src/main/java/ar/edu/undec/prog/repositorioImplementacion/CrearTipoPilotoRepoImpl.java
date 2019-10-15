@@ -20,7 +20,7 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
 
     @Override
     public boolean guardar(TipoPiloto tipoPilotoNuevo) {
-        TipoPilotoEntity elTipoPilotoAGuardar = new TipoPilotoMapper().mapeoCoreData(tipoPilotoNuevo, buscarTipoPilotosPorDenominacionCRUD);
+        TipoPilotoEntity elTipoPilotoAGuardar = new TipoPilotoMapper().mapeoCoreData(tipoPilotoNuevo);
         return crearTipoPilotoCRUD.save(elTipoPilotoAGuardar).getIdTipoPiloto()!=null;
     }
 

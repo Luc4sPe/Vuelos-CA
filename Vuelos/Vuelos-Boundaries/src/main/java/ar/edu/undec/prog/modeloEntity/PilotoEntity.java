@@ -19,7 +19,7 @@ public class PilotoEntity {
     private String dni;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private TipoPilotoEntity tipoPiloto;
 
     public PilotoEntity() {

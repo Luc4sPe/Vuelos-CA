@@ -10,22 +10,17 @@ import org.springframework.stereotype.Repository;
 public class TipoPilotoMapper {
 
 
-    public TipoPilotoEntity mapeoCoreData(TipoPiloto tipoPilotoCore, IBuscarTipoPilotosPorDenominacionCRUD buscarTipoPilotosPorDenominacionCRUD) {
+    public TipoPilotoEntity mapeoCoreData(TipoPiloto tipoPilotoCore) {
+        TipoPilotoEntity elTipo = new TipoPilotoEntity();
+        elTipo.setIdTipoPiloto(tipoPilotoCore.getIdTipoPiloto());
+        elTipo.setDenominacion(tipoPilotoCore.getDenominacion());
+        return elTipo;
 
-        if(tipoPilotoCore.getIdTipoPiloto()==null) {
-            TipoPilotoEntity elTipo = new TipoPilotoEntity();
-            elTipo.setDenominacion(tipoPilotoCore.getDenominacion());
-            return elTipo;
-        }
-        else
-        {
-            return buscarTipoPilotosPorDenominacionCRUD.findByDenominacion(tipoPilotoCore.getDenominacion());
-        }
     }
 
     public TipoPiloto mapeoDataCore(TipoPilotoEntity elTipoPiloto) {
-        try{
-            return TipoPiloto.factoryTipoPiloto(elTipoPiloto.getIdTipoPiloto(),elTipoPiloto.getDenominacion());
+        try {
+            return TipoPiloto.factoryTipoPiloto(elTipoPiloto.getIdTipoPiloto(), elTipoPiloto.getDenominacion());
         } catch (TipoPilotoIncompletoException e) {
             e.printStackTrace();
             return null;
