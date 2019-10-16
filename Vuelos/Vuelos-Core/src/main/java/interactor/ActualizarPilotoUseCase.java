@@ -14,12 +14,19 @@ public class ActualizarPilotoUseCase {
 
     public boolean actualizarPiloto(Piloto pilotoDatosNuevos) throws PilotoExisteException {
         Piloto pilotoAModificar=actualizarPilotoRepo.findByDNI(pilotoDatosNuevos.getDNI());
-        if(pilotoAModificar==null){
+        if(pilotoAModificar==null)
+               {
             return this.actualizarPilotoRepo.guardar(pilotoDatosNuevos);
         }
-        else if(pilotoAModificar.getIdPiloto()!=pilotoDatosNuevos.getIdPiloto()) {
-            throw new PilotoExisteException();
-        }
+        else
+            if(pilotoAModificar.getIdPiloto()!=pilotoDatosNuevos.getIdPiloto()) {
+                throw new PilotoExisteException();
+            }
+             else{
+                if( pilotoAModificar.getDNI().equals(pilotoDatosNuevos.getDNI())){
+                    return this.actualizarPilotoRepo.guardar(pilotoDatosNuevos);
+                }
+            }
         return false;
     }
 
