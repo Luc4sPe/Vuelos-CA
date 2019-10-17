@@ -7,9 +7,10 @@ import ar.edu.undec.prog.repositorioCRUD.ICrearTipoPilotoCRUD;
 import modelo.TipoPiloto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import repositorio.ICrearTipoPilotoRepo;
 
-@Repository
+@Service
 public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
 
     @Autowired
