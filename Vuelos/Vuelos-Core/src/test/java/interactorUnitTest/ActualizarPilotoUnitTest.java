@@ -16,7 +16,7 @@ import repositorio.IActualizarPilotoRepo;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class actualizarPilotoUnitTest {
+public class ActualizarPilotoUnitTest {
 
     @Mock
     IActualizarPilotoRepo actualizarPilotoRepo;

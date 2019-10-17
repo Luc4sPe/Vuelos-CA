@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)
-public class buscarTipoPilotosPorDenominacionUnitTest {
+public class BuscarTipoPilotosPorDenominacionUnitTest {
     @Mock
     IBuscarTipoPilotosPorDenominacionRepo buscarTipoPilotosPorDenominacion;
 
