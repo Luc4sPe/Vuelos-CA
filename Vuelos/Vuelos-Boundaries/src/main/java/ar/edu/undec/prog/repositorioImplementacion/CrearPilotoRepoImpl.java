@@ -22,11 +22,7 @@ public class CrearPilotoRepoImpl implements ICrearPilotoRepo {
     ICrearPilotoCRUD crearPilotoCRUD;
 
     @Autowired
-    IBuscarTipoPilotosPorDenominacionCRUD buscarTipoPilotosPorDenominacionCRUD;
-
-    @Autowired
     IBuscarPilotosPorDNI buscarPilotosPorDNI;
-
 
     public boolean guardar(Piloto pilotoNuevo) {
         PilotoEntity elPilotoAGuardar=new PilotoMapper().mapeoCoreData(pilotoNuevo);
@@ -37,7 +33,8 @@ public class CrearPilotoRepoImpl implements ICrearPilotoRepo {
         return new PilotoMapper().mapeoDataCore(buscarPilotosPorDNI.findByDni(pDNI));
     }
 
-    public PilotoEntity actualizar(Piloto elPiloto) {
-        return crearPilotoCRUD.save(new PilotoMapper().mapeoCoreData(elPiloto));
+    public boolean actualizar(Piloto pilotoNuevo) {
+        PilotoEntity elPilotoAGuardar=new PilotoMapper().mapeoCoreData(pilotoNuevo);
+        return crearPilotoCRUD.save(elPilotoAGuardar).getIdPiloto()!=null;
     }
 }

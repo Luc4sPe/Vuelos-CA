@@ -20,6 +20,7 @@ public class PilotoEntity {
 
 
     @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "tipo_piloto_id")
     private TipoPilotoEntity tipoPiloto;
 
     public PilotoEntity() {
