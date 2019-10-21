@@ -1,6 +1,6 @@
-package ar.edu.undec.prog.service.ServiceMapper;
+package ar.edu.undec.prog.Service.ServiceMapper;
 
-import ar.edu.undec.prog.service.modeloService.TipoPilotoDTO;
+import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.TipoPiloto;
 

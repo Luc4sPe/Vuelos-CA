@@ -1,17 +1,12 @@
-package ar.edu.undec.prog.service.Controller;
+package ar.edu.undec.prog.Service.Controller;
 
-import ar.edu.undec.prog.repositorioImplementacion.CrearTipoPilotoRepoImpl;
-import ar.edu.undec.prog.service.ServiceMapper.TipoPilotoMapper;
-import ar.edu.undec.prog.service.modeloService.TipoPilotoDTO;
+import ar.edu.undec.prog.Service.ServiceMapper.TipoPilotoMapper;
+import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
 import excepciones.TipoPilotoExisteException;
 import input.ICrearTipoPilotoInput;
-import interactor.CrearTipoPilotoUseCase;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import repositorio.ICrearTipoPilotoRepo;
 
 @RequestMapping("/")
 @RestController

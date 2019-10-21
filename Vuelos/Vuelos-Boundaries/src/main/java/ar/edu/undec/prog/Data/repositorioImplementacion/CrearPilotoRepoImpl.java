@@ -1,18 +1,13 @@
-package ar.edu.undec.prog.repositorioImplementacion;
+package ar.edu.undec.prog.Data.repositorioImplementacion;
 
-import ar.edu.undec.prog.mapper.PilotoMapper;
-import ar.edu.undec.prog.mapper.TipoPilotoMapper;
-import ar.edu.undec.prog.modeloEntity.PilotoEntity;
-import ar.edu.undec.prog.modeloEntity.TipoPilotoEntity;
-import ar.edu.undec.prog.repositorioCRUD.IBuscarPilotosPorDNI;
-import ar.edu.undec.prog.repositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
-import ar.edu.undec.prog.repositorioCRUD.ICrearPilotoCRUD;
-import ar.edu.undec.prog.repositorioCRUD.ICrearTipoPilotoCRUD;
+import ar.edu.undec.prog.Data.mapper.PilotoMapper;
+import ar.edu.undec.prog.Data.modeloEntity.PilotoEntity;
+import ar.edu.undec.prog.Data.repositorioCRUD.IBuscarPilotosPorDNI;
+import ar.edu.undec.prog.Data.repositorioCRUD.ICrearPilotoCRUD;
 import modelo.Piloto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import repositorio.ICrearPilotoRepo;
-import sun.security.krb5.internal.ccache.FileCredentialsCache;
 
 @Repository
 public class CrearPilotoRepoImpl implements ICrearPilotoRepo {

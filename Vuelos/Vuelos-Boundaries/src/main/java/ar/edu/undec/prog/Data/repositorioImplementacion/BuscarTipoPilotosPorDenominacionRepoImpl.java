@@ -1,8 +1,8 @@
-package ar.edu.undec.prog.repositorioImplementacion;
+package ar.edu.undec.prog.Data.repositorioImplementacion;
 
-import ar.edu.undec.prog.mapper.TipoPilotoMapper;
-import ar.edu.undec.prog.modeloEntity.TipoPilotoEntity;
-import ar.edu.undec.prog.repositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
+import ar.edu.undec.prog.Data.mapper.TipoPilotoMapper;
+import ar.edu.undec.prog.Data.modeloEntity.TipoPilotoEntity;
+import ar.edu.undec.prog.Data.repositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
 import modelo.TipoPiloto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

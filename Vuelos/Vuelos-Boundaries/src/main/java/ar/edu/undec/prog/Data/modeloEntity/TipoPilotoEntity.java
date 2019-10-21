@@ -1,4 +1,4 @@
-package ar.edu.undec.prog.modeloEntity;
+package ar.edu.undec.prog.Data.modeloEntity;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
 package ar.edu.undec.prog;
 
-import ar.edu.undec.prog.repositorioImplementacion.BuscarPilotosPorNombreRepoImpl;
+import ar.edu.undec.prog.Data.repositorioImplementacion.BuscarPilotosPorNombreRepoImpl;
 import modelo.Piloto;
 import org.junit.Test;
 import org.junit.runner.RunWith;

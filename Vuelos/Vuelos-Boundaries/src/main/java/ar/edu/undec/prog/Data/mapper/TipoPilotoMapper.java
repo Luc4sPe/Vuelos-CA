@@ -1,11 +1,8 @@
-package ar.edu.undec.prog.mapper;
+package ar.edu.undec.prog.Data.mapper;
 
-import ar.edu.undec.prog.modeloEntity.TipoPilotoEntity;
-import ar.edu.undec.prog.repositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
+import ar.edu.undec.prog.Data.modeloEntity.TipoPilotoEntity;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.TipoPiloto;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 public class TipoPilotoMapper {
 

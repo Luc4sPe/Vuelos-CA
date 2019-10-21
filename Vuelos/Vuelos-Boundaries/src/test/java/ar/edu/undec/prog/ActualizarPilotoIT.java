@@ -1,6 +1,6 @@
 package ar.edu.undec.prog;
 
-import ar.edu.undec.prog.repositorioImplementacion.CrearPilotoRepoImpl;
+import ar.edu.undec.prog.Data.repositorioImplementacion.CrearPilotoRepoImpl;
 import excepciones.PilotoIncompletoException;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.Piloto;

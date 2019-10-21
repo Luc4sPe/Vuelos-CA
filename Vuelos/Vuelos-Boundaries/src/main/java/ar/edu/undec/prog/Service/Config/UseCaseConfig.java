@@ -1,11 +1,9 @@
-package ar.edu.undec.prog.service.Config;
+package ar.edu.undec.prog.Service.Config;
 
-import interactor.CrearPilotoUseCase;
 import interactor.CrearTipoPilotoUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import repositorio.ICrearPilotoRepo;
 import repositorio.ICrearTipoPilotoRepo;
 
 @Configuration

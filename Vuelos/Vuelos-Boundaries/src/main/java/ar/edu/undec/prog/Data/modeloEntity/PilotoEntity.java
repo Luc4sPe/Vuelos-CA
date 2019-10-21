@@ -1,6 +1,4 @@
-package ar.edu.undec.prog.modeloEntity;
-
-import modelo.TipoPiloto;
+package ar.edu.undec.prog.Data.modeloEntity;
 
 import javax.persistence.*;
 
