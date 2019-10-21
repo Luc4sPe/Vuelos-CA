@@ -21,17 +21,24 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
     @Override
     public boolean guardar(TipoPiloto tipoPilotoNuevo) {
         TipoPilotoEntity elTipoPilotoAGuardar = new TipoPilotoMapper().mapeoCoreData(tipoPilotoNuevo);
-        return crearTipoPilotoCRUD.save(elTipoPilotoAGuardar).getIdTipoPiloto()!=null;
+        return crearTipoPilotoCRUD.save(elTipoPilotoAGuardar).getIdTipoPiloto() != null;
     }
 
     @Override
-    public TipoPiloto findByIdTipoPiloto(Integer id){
+    public TipoPiloto findByIdTipoPiloto(Integer id) {
         TipoPilotoEntity elTipoPilotoEntity = crearTipoPilotoCRUD.findByIdTipoPiloto(id);
-        return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+        if (elTipoPilotoEntity != null) {
+            return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+        }
+        return null;
     }
 
     @Override
     public TipoPiloto findByDenominacion(String denominacion) {
+        TipoPilotoEntity elTipoPilotoEntity = crearTipoPilotoCRUD.findByDenominacion(denominacion);
+        if (elTipoPilotoEntity != null) {
+            return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+        }
         return null;
     }
 }
