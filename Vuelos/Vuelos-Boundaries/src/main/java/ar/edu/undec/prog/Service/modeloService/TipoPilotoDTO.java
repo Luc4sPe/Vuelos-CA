@@ -1,4 +1,4 @@
-package ar.edu.undec.prog.service.modeloService;
+package ar.edu.undec.prog.Service.modeloService;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
