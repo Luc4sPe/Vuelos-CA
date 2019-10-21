@@ -19,17 +19,15 @@ public class CrearPilotoRepoImpl implements ICrearPilotoRepo {
     @Autowired
     IBuscarPilotosPorDNI buscarPilotosPorDNI;
 
+    @Override
     public boolean guardar(Piloto pilotoNuevo) {
         PilotoEntity elPilotoAGuardar=new PilotoMapper().mapeoCoreData(pilotoNuevo);
         return crearPilotoCRUD.save(elPilotoAGuardar).getIdPiloto()!=null;
     }
 
+    @Override
     public Piloto findByDNI(String pDNI) {
         return new PilotoMapper().mapeoDataCore(buscarPilotosPorDNI.findByDni(pDNI));
     }
-
-    public boolean actualizar(Piloto pilotoNuevo) {
-        PilotoEntity elPilotoAGuardar=new PilotoMapper().mapeoCoreData(pilotoNuevo);
-        return crearPilotoCRUD.save(elPilotoAGuardar).getIdPiloto()!=null;
-    }
+    
 }

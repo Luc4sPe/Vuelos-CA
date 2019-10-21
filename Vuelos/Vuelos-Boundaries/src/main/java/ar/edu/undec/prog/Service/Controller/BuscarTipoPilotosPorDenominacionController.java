@@ -1,5 +1,6 @@
 package ar.edu.undec.prog.Service.Controller;
 
+import ar.edu.undec.prog.Service.ServiceMapper.TipoPilotoMapper;
 import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
 import input.IBuscarTipoPilotosPorDenominacionInput;
 import modelo.TipoPiloto;
@@ -8,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/")
@@ -24,10 +26,13 @@ public class BuscarTipoPilotosPorDenominacionController {
     @ResponseBody
     public ResponseEntity<?> consultarAccionPorNombre(@PathVariable("denominacion") String denominacion){
         try {
-            List<TipoPiloto> accion = buscarTipoPilotosPorDenominacionInput.buscarTipoPilotosPorDenominacion(denominacion);
-            return ResponseEntity.status(HttpStatus.OK).body(accion);
+            List<TipoPilotoDTO> tiposPiloto = new ArrayList<>();
+            this.buscarTipoPilotosPorDenominacionInput.buscarTipoPilotosPorDenominacion(denominacion).forEach(tp -> tiposPiloto.add(new TipoPilotoMapper().mapeoCoreDTO(tp)));;
+            if (tiposPiloto.isEmpty()) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.status(HttpStatus.OK).body(tiposPiloto);
         } catch (Exception ex) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            ex.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

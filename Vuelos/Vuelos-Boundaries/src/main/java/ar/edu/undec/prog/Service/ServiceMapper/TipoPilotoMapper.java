@@ -7,11 +7,8 @@ import modelo.TipoPiloto;
 public class TipoPilotoMapper {
 
     public TipoPilotoDTO mapeoCoreDTO(TipoPiloto tipoPilotoCore) {
-        TipoPilotoDTO elTipo = new TipoPilotoDTO(tipoPilotoCore.getIdTipoPiloto(),tipoPilotoCore.getDenominacion());
-//        elTipo.setIdTipoPiloto(tipoPilotoCore.getIdTipoPiloto());
-//        elTipo.setDenominacion(tipoPilotoCore.getDenominacion());
+        TipoPilotoDTO elTipo = new TipoPilotoDTO(tipoPilotoCore.getIdTipoPiloto(), tipoPilotoCore.getDenominacion());
         return elTipo;
-
     }
 
     public TipoPiloto mapeoDTOCore(TipoPilotoDTO elTipoPiloto) {

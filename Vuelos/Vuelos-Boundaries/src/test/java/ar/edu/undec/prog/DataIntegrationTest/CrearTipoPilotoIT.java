@@ -1,4 +1,4 @@
-package ar.edu.undec.prog;
+package ar.edu.undec.prog.DataIntegrationTest;
 
 import ar.edu.undec.prog.Data.repositorioImplementacion.CrearTipoPilotoRepoImpl;
 import excepciones.TipoPilotoIncompletoException;

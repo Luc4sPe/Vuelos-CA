@@ -1,4 +1,4 @@
-package ar.edu.undec.prog;
+package ar.edu.undec.prog.DataIntegrationTest;
 
 import ar.edu.undec.prog.Data.repositorioImplementacion.CrearPilotoRepoImpl;
 import excepciones.PilotoIncompletoException;
@@ -18,18 +18,19 @@ import static junit.framework.TestCase.assertTrue;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @SqlGroup({
-        @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:actualizarPilotoAntes.sql"),
-        @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:actualizarPilotoDespues.sql")
+        @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:crearPilotoAntes.sql"),
+        @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:crearPilotoDespues.sql")
 })
-public class ActualizarPilotoIT {
+public class CrearPilotoIT {
+
     @Autowired
     CrearPilotoRepoImpl crearPilotoRepoImpl;
 
     @Test
-    public void actualizarPiloto_pilotoGuardado_devuelveTrue() throws PilotoIncompletoException, TipoPilotoIncompletoException {
+    public void guardarPiloto_pilotoGuardado_devuelveTrue() throws PilotoIncompletoException, TipoPilotoIncompletoException {
         TipoPiloto elTipoPiloto=TipoPiloto.factoryTipoPiloto(1, "Comandante");
-        Piloto elPiloto= Piloto.factoryPiloto(1,"Perez","Juan","12345678", elTipoPiloto);
-        boolean resultado= crearPilotoRepoImpl.actualizar(elPiloto);
+        Piloto elPiloto= Piloto.factoryPiloto(null,"Perez","Juan","12345678", elTipoPiloto);
+        boolean resultado= crearPilotoRepoImpl.guardar(elPiloto);
         assertTrue(resultado);
     }
 }

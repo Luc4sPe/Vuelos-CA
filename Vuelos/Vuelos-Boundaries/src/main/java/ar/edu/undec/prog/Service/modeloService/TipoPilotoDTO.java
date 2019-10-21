@@ -32,18 +32,4 @@ public class TipoPilotoDTO {
         this.denominacion = denominacion;
     }
 
-    /*
-       @JsonProperty("idAccion")
-    public final Integer idAccion;
-
-    @JsonProperty("nombre")
-    public String nombre;
-
-    @JsonCreator
-    public AccionDTO(@JsonProperty("idAccion") Integer idAccion,
-                     @JsonProperty("nombre") String nombre) {
-        this.idAccion = idAccion;
-        this.nombre = nombre.toUpperCase();
-    }
-    */
 }
