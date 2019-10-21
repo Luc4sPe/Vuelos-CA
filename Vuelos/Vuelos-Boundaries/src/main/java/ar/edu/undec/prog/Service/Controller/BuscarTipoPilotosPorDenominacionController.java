@@ -1,0 +1,33 @@
+package ar.edu.undec.prog.Service.Controller;
+
+import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
+import input.IBuscarTipoPilotosPorDenominacionInput;
+import modelo.TipoPiloto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequestMapping("/")
+@RestController
+public class BuscarTipoPilotosPorDenominacionController {
+
+    private IBuscarTipoPilotosPorDenominacionInput buscarTipoPilotosPorDenominacionInput;
+
+    public BuscarTipoPilotosPorDenominacionController(IBuscarTipoPilotosPorDenominacionInput buscarTipoPilotosPorDenominacionInput) {
+        this.buscarTipoPilotosPorDenominacionInput = buscarTipoPilotosPorDenominacionInput;
+    }
+
+    @RequestMapping(value = "tipoPiloto/denominacion/{denominacion}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<?> consultarAccionPorNombre(@PathVariable("denominacion") String denominacion){
+        try {
+            List<TipoPiloto> accion = buscarTipoPilotosPorDenominacionInput.buscarTipoPilotosPorDenominacion(denominacion);
+            return ResponseEntity.status(HttpStatus.OK).body(accion);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
+}
