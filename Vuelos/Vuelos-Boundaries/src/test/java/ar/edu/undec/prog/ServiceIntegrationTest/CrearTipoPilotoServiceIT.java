@@ -1,7 +1,7 @@
 package ar.edu.undec.prog.ServiceIntegrationTest;
 
 import ar.edu.undec.prog.Service.Controller.CrearTipoPilotoController;
-import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
+import ar.edu.undec.prog.Service.ModeloService.TipoPilotoDTO;
 import excepciones.TipoPilotoExisteException;
 import input.ICrearTipoPilotoInput;
 import modelo.TipoPiloto;

@@ -1,9 +1,9 @@
-package ar.edu.undec.prog.Data.repositorioImplementacion;
+package ar.edu.undec.prog.Data.RepositorioImplementacion;
 
-import ar.edu.undec.prog.Data.mapper.TipoPilotoMapper;
-import ar.edu.undec.prog.Data.modeloEntity.TipoPilotoEntity;
-import ar.edu.undec.prog.Data.repositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
-import ar.edu.undec.prog.Data.repositorioCRUD.ICrearTipoPilotoCRUD;
+import ar.edu.undec.prog.Data.EntityMapper.TipoPilotoEntityMapper;
+import ar.edu.undec.prog.Data.ModeloEntity.TipoPilotoEntity;
+import ar.edu.undec.prog.Data.RepositorioCRUD.IBuscarTipoPilotosPorDenominacionCRUD;
+import ar.edu.undec.prog.Data.RepositorioCRUD.ICrearTipoPilotoCRUD;
 import modelo.TipoPiloto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
 
     @Override
     public boolean guardar(TipoPiloto tipoPilotoNuevo) {
-        TipoPilotoEntity elTipoPilotoAGuardar = new TipoPilotoMapper().mapeoCoreData(tipoPilotoNuevo);
+        TipoPilotoEntity elTipoPilotoAGuardar = new TipoPilotoEntityMapper().mapeoCoreData(tipoPilotoNuevo);
         return crearTipoPilotoCRUD.save(elTipoPilotoAGuardar).getIdTipoPiloto() != null;
     }
 
@@ -28,7 +28,7 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
     public TipoPiloto findByIdTipoPiloto(Integer id) {
         TipoPilotoEntity elTipoPilotoEntity = crearTipoPilotoCRUD.findByIdTipoPiloto(id);
         if (elTipoPilotoEntity != null) {
-            return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+            return new TipoPilotoEntityMapper().mapeoDataCore(elTipoPilotoEntity);
         }
         return null;
     }
@@ -37,7 +37,7 @@ public class CrearTipoPilotoRepoImpl implements ICrearTipoPilotoRepo {
     public TipoPiloto findByDenominacion(String denominacion) {
         TipoPilotoEntity elTipoPilotoEntity = crearTipoPilotoCRUD.findByDenominacion(denominacion);
         if (elTipoPilotoEntity != null) {
-            return new TipoPilotoMapper().mapeoDataCore(elTipoPilotoEntity);
+            return new TipoPilotoEntityMapper().mapeoDataCore(elTipoPilotoEntity);
         }
         return null;
     }

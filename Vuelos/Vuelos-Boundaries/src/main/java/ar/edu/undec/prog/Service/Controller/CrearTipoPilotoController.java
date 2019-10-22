@@ -1,7 +1,7 @@
 package ar.edu.undec.prog.Service.Controller;
 
-import ar.edu.undec.prog.Service.ServiceMapper.TipoPilotoMapper;
-import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
+import ar.edu.undec.prog.Service.ServiceMapper.TipoPilotoDTOMapper;
+import ar.edu.undec.prog.Service.ModeloService.TipoPilotoDTO;
 import excepciones.TipoPilotoExisteException;
 import input.ICrearTipoPilotoInput;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ public class CrearTipoPilotoController {
     @ResponseBody
     public ResponseEntity<?> crearTipoPiloto(@RequestBody TipoPilotoDTO tipoPilotoDTO) {
         try {
-            boolean resultado = this.crearTipoPilotoInput.crearTipoPiloto(new TipoPilotoMapper().mapeoDTOCore(tipoPilotoDTO));
+            boolean resultado = this.crearTipoPilotoInput.crearTipoPiloto(new TipoPilotoDTOMapper().mapeoDTOCore(tipoPilotoDTO));
             if (resultado) return ResponseEntity.status(HttpStatus.OK).body(true);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (TipoPilotoExisteException e) {

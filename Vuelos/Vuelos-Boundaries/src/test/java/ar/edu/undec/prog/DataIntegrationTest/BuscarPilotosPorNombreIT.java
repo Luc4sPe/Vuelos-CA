@@ -1,6 +1,6 @@
 package ar.edu.undec.prog.DataIntegrationTest;
 
-import ar.edu.undec.prog.Data.repositorioImplementacion.BuscarPilotosPorNombreRepoImpl;
+import ar.edu.undec.prog.Data.RepositorioImplementacion.BuscarPilotosPorNombreRepoImpl;
 import modelo.Piloto;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,10 +1,10 @@
 package ar.edu.undec.prog.Service.ServiceMapper;
 
-import ar.edu.undec.prog.Service.modeloService.TipoPilotoDTO;
+import ar.edu.undec.prog.Service.ModeloService.TipoPilotoDTO;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.TipoPiloto;
 
-public class TipoPilotoMapper {
+public class TipoPilotoDTOMapper {
 
     public TipoPilotoDTO mapeoCoreDTO(TipoPiloto tipoPilotoCore) {
         TipoPilotoDTO elTipo = new TipoPilotoDTO(tipoPilotoCore.getIdTipoPiloto(), tipoPilotoCore.getDenominacion());

@@ -1,10 +1,10 @@
-package ar.edu.undec.prog.Data.mapper;
+package ar.edu.undec.prog.Data.EntityMapper;
 
-import ar.edu.undec.prog.Data.modeloEntity.TipoPilotoEntity;
+import ar.edu.undec.prog.Data.ModeloEntity.TipoPilotoEntity;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.TipoPiloto;
 
-public class TipoPilotoMapper {
+public class TipoPilotoEntityMapper {
 
 
     public TipoPilotoEntity mapeoCoreData(TipoPiloto tipoPilotoCore) {

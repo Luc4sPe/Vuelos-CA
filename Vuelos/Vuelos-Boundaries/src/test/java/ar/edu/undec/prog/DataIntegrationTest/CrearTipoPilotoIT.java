@@ -1,6 +1,6 @@
 package ar.edu.undec.prog.DataIntegrationTest;
 
-import ar.edu.undec.prog.Data.repositorioImplementacion.CrearTipoPilotoRepoImpl;
+import ar.edu.undec.prog.Data.RepositorioImplementacion.CrearTipoPilotoRepoImpl;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.TipoPiloto;
 import org.junit.Test;

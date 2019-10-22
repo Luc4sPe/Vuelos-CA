@@ -1,6 +1,6 @@
 package interactorUnitTest;
 
-import Mockito.MockitoExtension;
+import mockito.MockitoExtension;
 import excepciones.TipoPilotoExisteException;
 import excepciones.TipoPilotoIncompletoException;
 import interactor.ActualizarTipoPilotoUseCase;
@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import repositorio.IActualizarTipoPilotoRepo;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static org.mockito.Mockito.when;
 

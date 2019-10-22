@@ -1,7 +1,6 @@
-package ar.edu.undec.prog.Data.repositorioCRUD;
+package ar.edu.undec.prog.Data.RepositorioCRUD;
 
-import ar.edu.undec.prog.Data.modeloEntity.TipoPilotoEntity;
-import modelo.TipoPiloto;
+import ar.edu.undec.prog.Data.ModeloEntity.TipoPilotoEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

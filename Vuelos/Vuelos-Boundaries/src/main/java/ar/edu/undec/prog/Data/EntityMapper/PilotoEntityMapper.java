@@ -1,12 +1,12 @@
-package ar.edu.undec.prog.Data.mapper;
+package ar.edu.undec.prog.Data.EntityMapper;
 
-import ar.edu.undec.prog.Data.modeloEntity.PilotoEntity;
+import ar.edu.undec.prog.Data.ModeloEntity.PilotoEntity;
 import excepciones.PilotoIncompletoException;
 import excepciones.TipoPilotoIncompletoException;
 import modelo.Piloto;
 import modelo.TipoPiloto;
 
-public class PilotoMapper {
+public class PilotoEntityMapper {
 
 
     public PilotoEntity mapeoCoreData(Piloto pilotoCore) {
@@ -15,7 +15,7 @@ public class PilotoMapper {
             pilotoEntity.setNombre(pilotoCore.getNombre());
             pilotoEntity.setApellido(pilotoCore.getApellido());
             pilotoEntity.setDni(pilotoCore.getDni());
-            pilotoEntity.setTipoPiloto(new TipoPilotoMapper().mapeoCoreData(pilotoCore.getTipoPiloto()));
+            pilotoEntity.setTipoPiloto(new TipoPilotoEntityMapper().mapeoCoreData(pilotoCore.getTipoPiloto()));
             return pilotoEntity;
 
     }

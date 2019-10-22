@@ -1,6 +1,6 @@
 package interactorUnitTest;
 
-import Mockito.MockitoExtension;
+import mockito.MockitoExtension;
 import excepciones.TipoPilotoIncompletoException;
 import interactor.BuscarTipoPilotosPorDenominacionUseCase;
 import modelo.TipoPiloto;

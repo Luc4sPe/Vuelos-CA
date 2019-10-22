@@ -1,8 +1,8 @@
-package ar.edu.undec.prog.Data.repositorioImplementacion;
+package ar.edu.undec.prog.Data.RepositorioImplementacion;
 
-import ar.edu.undec.prog.Data.mapper.PilotoMapper;
-import ar.edu.undec.prog.Data.modeloEntity.PilotoEntity;
-import ar.edu.undec.prog.Data.repositorioCRUD.IBuscarPilotosPorNombreCRUD;
+import ar.edu.undec.prog.Data.EntityMapper.PilotoEntityMapper;
+import ar.edu.undec.prog.Data.ModeloEntity.PilotoEntity;
+import ar.edu.undec.prog.Data.RepositorioCRUD.IBuscarPilotosPorNombreCRUD;
 import modelo.Piloto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class BuscarPilotosPorNombreRepoImpl implements IBuscarPilotosPorNombreRe
     public Collection<Piloto> buscarPilotosPorNombre(String nombrePiloto) {
         List<Piloto> pilotosBuscados = new ArrayList<>();
         for (PilotoEntity elPiloto : iBuscarPilotosPorNombreCRUD.findByNombreContains(nombrePiloto)) {
-            Piloto piloto = new PilotoMapper().mapeoDataCore(elPiloto);
+            Piloto piloto = new PilotoEntityMapper().mapeoDataCore(elPiloto);
             pilotosBuscados.add(piloto);
         }
         return pilotosBuscados;
