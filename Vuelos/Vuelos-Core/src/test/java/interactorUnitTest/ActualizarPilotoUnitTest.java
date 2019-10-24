@@ -26,7 +26,7 @@ public class ActualizarPilotoUnitTest {
     public void actualizarPiloto_NoHayConflictoPilotoExistente_GuardaCorrectamente() throws TipoPilotoIncompletoException, PilotoIncompletoException, PilotoExisteException {
         Piloto pilotoDatosNuevos=Piloto.factoryPiloto(1,"Lopez", "Jorge","000111222", TipoPiloto.factoryTipoPiloto(1, "Comandante"));
         when(actualizarPilotoRepo.findByDNI("000111222")).thenReturn(null);
-        when(actualizarPilotoRepo.guardar(pilotoDatosNuevos)).thenReturn(true);
+        when(actualizarPilotoRepo.actualizar(pilotoDatosNuevos)).thenReturn(true);
 
         ActualizarPilotoUseCase actualizarPilotoUseCase = new ActualizarPilotoUseCase(actualizarPilotoRepo);
         boolean resultado = actualizarPilotoUseCase.actualizarPiloto(pilotoDatosNuevos);
@@ -46,7 +46,7 @@ public class ActualizarPilotoUnitTest {
     public void actualizarPiloto_ConflictoConPilotoExistentePeroEsElMismo_GuardaCorrectamente() throws TipoPilotoIncompletoException, PilotoIncompletoException, PilotoExisteException {
         Piloto pilotoDatosNuevos=Piloto.factoryPiloto(1,"Lopez", "Jorge","12345678", TipoPiloto.factoryTipoPiloto(1, "Comandante"));
         when(actualizarPilotoRepo.findByDNI("12345678")).thenReturn(Piloto.factoryPiloto(1,"Paez", "Carlos","12345678", TipoPiloto.factoryTipoPiloto(1, "Comandante")));
-        when(actualizarPilotoRepo.guardar(pilotoDatosNuevos)).thenReturn(true);
+        when(actualizarPilotoRepo.actualizar(pilotoDatosNuevos)).thenReturn(true);
         ActualizarPilotoUseCase actualizarPilotoUseCase= new ActualizarPilotoUseCase(actualizarPilotoRepo);
         boolean resultado = actualizarPilotoUseCase.actualizarPiloto(pilotoDatosNuevos);
         Assertions.assertTrue(resultado);

@@ -30,7 +30,7 @@ public class ActualizarPilotoIT {
     public void actualizarPiloto_pilotoGuardado_devuelveTrue() throws PilotoIncompletoException, TipoPilotoIncompletoException {
         TipoPiloto elTipoPiloto=TipoPiloto.factoryTipoPiloto(1, "Comandante");
         Piloto elPiloto= Piloto.factoryPiloto(1,"Perez","Juan","12345678", elTipoPiloto);
-        boolean resultado= actualizarPilotoRepoImpl.guardar(elPiloto);
+        boolean resultado= actualizarPilotoRepoImpl.actualizar(elPiloto);
         assertTrue(resultado);
     }
 }

@@ -15,7 +15,7 @@ public class ActualizarPilotoRepoImpl implements IActualizarPilotoRepo {
     IActualizarPilotoCRUD actualizarPilotoCRUD;
 
     @Override
-    public boolean guardar(Piloto pilotoDatosNuevos) {
+    public boolean actualizar(Piloto pilotoDatosNuevos) {
         PilotoEntity elPilotoAGuardar=new PilotoEntityMapper().mapeoCoreData(pilotoDatosNuevos);
         return actualizarPilotoCRUD.save(elPilotoAGuardar)!=null;
     }

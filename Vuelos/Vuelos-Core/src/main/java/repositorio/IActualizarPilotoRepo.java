@@ -5,7 +5,7 @@ import modelo.Piloto;
 public interface IActualizarPilotoRepo {
 
 
-    boolean guardar(Piloto pilotoDatosNuevos);
+    boolean actualizar(Piloto pilotoDatosNuevos);
 
     Piloto findByDNI(String dni);
 }
