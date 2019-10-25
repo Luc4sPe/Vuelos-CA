@@ -36,11 +36,8 @@ public class ActualizarTipoPilotoUnitTest {
     public void actualizarTipoPiloto_HayConflictoTipoPilotoExiste_TipoPilotoNoActualiza() throws TipoPilotoIncompletoException, TipoPilotoExisteException {
         TipoPiloto tipoPilotoActualizar=TipoPiloto.factoryTipoPiloto(1,"Comandante");
 
-        ArrayList<TipoPiloto> arrayTipoPilotos = new ArrayList<TipoPiloto>();
-        arrayTipoPilotos.add(TipoPiloto.factoryTipoPiloto(1,"Comandante"));
-
         when(actualizarTipoPilotoRepo.findByIdTipoPiloto(1)).thenReturn(TipoPiloto.factoryTipoPiloto(1,"Comandante"));
-        when(actualizarTipoPilotoRepo.findTipoPilotosPorDenominacion("Comandante")).thenReturn(arrayTipoPilotos);
+        when(actualizarTipoPilotoRepo.findByDenominacion("Comandante")).thenReturn(TipoPiloto.factoryTipoPiloto(1,"Comandante"));
         when(actualizarTipoPilotoRepo.actualizar(tipoPilotoActualizar)).thenReturn(false);
 
         ActualizarTipoPilotoUseCase actualizarTipoPilotoUseCase = new ActualizarTipoPilotoUseCase(actualizarTipoPilotoRepo);

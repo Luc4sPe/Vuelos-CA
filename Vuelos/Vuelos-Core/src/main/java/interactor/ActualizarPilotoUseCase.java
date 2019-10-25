@@ -19,11 +19,8 @@ public class ActualizarPilotoUseCase {
         } else if (pilotoAModificar.getIdPiloto() != pilotoDatosNuevos.getIdPiloto()) {
             throw new PilotoExisteException();
         } else {
-            if (pilotoAModificar.getDNI().equals(pilotoDatosNuevos.getDNI())) {
-                return this.actualizarPilotoRepo.actualizar(pilotoDatosNuevos);
-            }
+            return this.actualizarPilotoRepo.actualizar(pilotoDatosNuevos);
         }
-        return false;
     }
 
 }

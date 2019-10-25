@@ -10,5 +10,5 @@ public interface IActualizarTipoPilotoRepo {
 
     TipoPiloto findByIdTipoPiloto(Integer id);
 
-    Collection<TipoPiloto> findTipoPilotosPorDenominacion(String denominacion);
+    TipoPiloto findByDenominacion(String denominacion);
 }

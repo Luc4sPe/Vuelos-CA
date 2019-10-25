@@ -1,5 +1,6 @@
 package interactor;
 
+import excepciones.TipoPilotoExisteException;
 import modelo.TipoPiloto;
 import repositorio.IActualizarTipoPilotoRepo;
 
@@ -14,16 +15,15 @@ public class ActualizarTipoPilotoUseCase {
         this.actualizarTipoPilotoRepo = actualizarTipoPilotoRepo;
     }
 
-    public boolean actualizarTipoPiloto(TipoPiloto tipoPilotoDatosNuevos){
-        TipoPiloto tipoPilotoAModificar = actualizarTipoPilotoRepo.findByIdTipoPiloto(tipoPilotoDatosNuevos.getIdTipoPiloto());
-        if (tipoPilotoAModificar!=null)
-            {
-                Collection<TipoPiloto> tipoPilotos = actualizarTipoPilotoRepo.findTipoPilotosPorDenominacion(tipoPilotoDatosNuevos.getDenominacion());
-                if (tipoPilotos.size()==0 ) {
-                    return this.actualizarTipoPilotoRepo.actualizar(tipoPilotoDatosNuevos);
-                }
+    public boolean actualizarTipoPiloto(TipoPiloto tipoPilotoDatosNuevos) throws TipoPilotoExisteException {
+        TipoPiloto tipoPilotoAModificar = actualizarTipoPilotoRepo.findByDenominacion(tipoPilotoDatosNuevos.getDenominacion());
+        if (tipoPilotoAModificar == null) {
+            return this.actualizarTipoPilotoRepo.actualizar(tipoPilotoDatosNuevos);
+        } else if (tipoPilotoAModificar.getIdTipoPiloto() != tipoPilotoDatosNuevos.getIdTipoPiloto()) {
+            throw new TipoPilotoExisteException();
+        } else {
+            return this.actualizarTipoPilotoRepo.actualizar(tipoPilotoDatosNuevos);
         }
-        return false;
     }
 
 }
